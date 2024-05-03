@@ -12,6 +12,9 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Install Pillow for image processing
+RUN pip install --no-cache-dir Pillow
+
 # Update Flask, Jinja2, and MarkupSafe
 RUN pip install --no-cache-dir --upgrade flask jinja2 markupsafe
 
