@@ -1,6 +1,11 @@
 # CropCareAI
 CropCareAI is a web application built using the Flask framework that aims to assist plant enthusiasts, farmers, and researchers in identifying and diagnosing plant diseases using AI.
 
+
+## Demo
+![](./images/CropCareAIDemo.gif)
+
+
 Installation guide for cropcare.ai
 
 1. **Install Python**: 
@@ -19,8 +24,6 @@ Open a terminal or command prompt on your system or open us VS Code. The steps f
    ```
    cd path/to/my-flask-app
    ```
-
-
 
 
 5. **Create a virtual environment**: It's recommended to create a virtual environment to isolate the dependencies of the Flask application. In the terminal or command prompt, run the following command to create a virtual environment:
