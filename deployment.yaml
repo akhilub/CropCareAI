@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cropcare-ai
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cropcare-ai
+  template:
+    metadata:
+      labels:
+        app: cropcare-ai
+    spec:
+      containers:
+      - name: cropcare-ai
+        image: cropcare-ai:latest
+        ports:
+        - containerPort: 5000
