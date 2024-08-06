@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: cropcare-ai
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: cropcare-ai
@@ -15,5 +15,6 @@ spec:
       containers:
       - name: cropcare-ai
         image: cropcare-ai:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 5000
