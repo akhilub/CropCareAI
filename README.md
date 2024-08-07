@@ -5,6 +5,12 @@ CropCareAI is a web application built using the Flask framework that aims to ass
 ## Demo
 ![](./images/CropCareAIDemo.gif)
 
+Kubernetes deployment
+
+<p align="center"> 
+    <img src="images/cropcare-ai-kubernetes.gif" align="center" height="" width=""></img>
+</p>
+
 
 Installation guide for cropcare.ai
 
