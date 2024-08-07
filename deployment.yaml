@@ -15,6 +15,7 @@ spec:
       containers:
       - name: cropcare-ai
         image: cropcare-ai:latest
-        imagePullPolicy: Never
+        # imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
