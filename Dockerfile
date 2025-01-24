@@ -18,6 +18,9 @@ RUN pip install --no-cache-dir Pillow
 # Update Flask, Jinja2, and MarkupSafe
 RUN pip install --no-cache-dir --upgrade flask jinja2 markupsafe
 
+# Create uploads directory and set permissions
+RUN mkdir -p /app/uploads && chmod 777 /app/uploads
+
 COPY . .
 
 # CMD ["python", "app.py"]
