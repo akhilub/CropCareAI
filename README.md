@@ -1,3 +1,15 @@
+---
+title: CropCareAI
+emoji: 🌿
+colorFrom: green
+colorTo: blue
+sdk: docker
+sdk_version: "3.11"
+app_file: app.py
+pinned: false
+---
+
+
 # CropCareAI
 CropCareAI is a web application built using the Flask framework that aims to assist plant enthusiasts, farmers, and researchers in identifying and diagnosing plant diseases using AI.
 
