@@ -14,10 +14,14 @@ pinned: false
 CropCareAI is a web application built using the Flask framework that aims to assist plant enthusiasts, farmers, and researchers in identifying and diagnosing plant diseases using AI.
 
 
-## Demo
-![](./images/CropCareAIDemo.gif)
+## Application Demo
 
-Kubernetes deployment
+<p align="center"> 
+    <img src="images/CropCareAIDemo.gif" align="center" height="" width=""></img>
+</p>
+
+
+## Kubernetes deployment
 
 <p align="center"> 
     <img src="images/cropcare-ai-kubernetes.gif" align="center" height="" width=""></img>
