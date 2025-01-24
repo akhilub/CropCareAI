@@ -20,6 +20,11 @@ RUN pip install --no-cache-dir --upgrade flask jinja2 markupsafe
 
 COPY . .
 
-CMD ["python", "app.py"]
+# CMD ["python", "app.py"]
+
+EXPOSE 7860
+
+CMD ["python", "-c", "import app; app.app.run(host='0.0.0.0', port=7860)"]
+
 
 
