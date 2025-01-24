@@ -1,12 +1,10 @@
 from flask import Flask, render_template, request
 import numpy as np
 import os
+import tempfile
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from werkzeug.utils import secure_filename
-
-from flask import (Flask, redirect, render_template, request,
-                   send_from_directory, url_for)
 
 app = Flask(__name__)
 
@@ -27,27 +25,23 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    # Retrieve the uploaded image file
-    image_file = request.files['file']
-
-    # Save the file to the uploads folder
-    basepath = os.path.dirname(os.path.realpath('__file__'))
-    file_path = os.path.join(basepath, './uploads', secure_filename(image_file.filename))
-    image_file.save(file_path)
+    # Create a temporary file
+    with tempfile.NamedTemporaryFile(delete=False) as tmp:
+        image_file = request.files['file']
+        tmp.write(image_file.read())
+        tmp_path = tmp.name
     
     # Make prediction
-    result = model_predict(file_path, model)
+    result = model_predict(tmp_path, model)
+    
+    # Clean up
+    os.unlink(tmp_path)
 
     categories = ['Healthy', 'Multiple Disease', 'Rust', 'Scab']
-
-    # Process the result
     pred_class = np.argmax(result)
     output = categories[pred_class]
     
-    # Return the prediction result
     return output
 
-
 if __name__ == '__main__':
-    # app.run()          #to run locally
-    app.run(host='0.0.0.0', port=5001) #to run using docker
+    app.run(host='0.0.0.0', port=7860)
